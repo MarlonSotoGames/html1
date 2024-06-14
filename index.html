@@ -3,30 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Primer Sitio Web</title>
+    <title>Marlon Soto Games</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #ACE7FF; /* Celeste pastel */
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 20px;
+            font-weight: 700;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        .button {
+            background-color: red;
+            color: white;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            font-family: 'Open Sans', sans-serif;
+        }
+        .course-info {
+            background-color: #DFFFD6; /* Verde claro */
+            padding: 20px;
+            margin-top: 20px;
+            display: none;
+            text-align: left;
+        }
+        .contact-button {
+            background-color: blue;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            display: block;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .facebook-link {
+            display: block;
+            margin-top: 20px;
+            color: blue;
+            text-decoration: none;
+            font-size: 14px;
+        }
+    </style>
 </head>
 <body>
+    <img src="C:\Users\marlo\Downloads\c2c.PNG" alt="Logo" width="200">
+    <h1>Marlon Soto Games</h1>
 
-    <header>
-        <h1>Bienvenido a mi sitio web</h1>
-    </header>
+    <div class="buttons">
+        <button class="button" onclick="showCourseInfo('python')">Curso Python</button>
+        <button class="button" onclick="showCourseInfo('java')">Curso Java</button>
+        <button class="button" onclick="showCourseInfo('cpp')">Curso C++</button>
+    </div>
 
-    <nav>
-        <ul>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Acerca de</a></li>
-            <li><a href="#">Contacto</a></li>
-        </ul>
-    </nav>
+    <div id="course-python" class="course-info">
+        <h2>Curso Python</h2>
+        <p>Descripción: Entra a nuestro curso Python para aprender el lenguaje desde lo básico hasta lo avanzado.</p>
+        <a href="https://wa.me/50689028220" class="contact-button">Contactar</a>
+    </div>
 
-    <main>
-        <h2>Contenido Principal</h2>
-        <p>¡Hola! Este es el contenido principal de mi sitio web.</p>
-    </main>
+    <div id="course-java" class="course-info">
+        <h2>Curso Java</h2>
+        <p>Descripción: Entra a nuestro curso Java para aprender el lenguaje desde lo básico hasta lo avanzado.</p>
+        <a href="https://wa.me/50689028220" class="contact-button">Contactar</a>
+    </div>
 
-    <footer>
-        <p>Derechos de autor &copy; 2024 Mi Sitio Web</p>
-    </footer>
+    <div id="course-cpp" class="course-info">
+        <h2>Curso C++</h2>
+        <p>Descripción: Próximamente abriremos un curso C++.</p>
+        <a href="https://wa.me/50689028220" class="contact-button">Contactar</a>
+    </div>
 
+    <a href="https://www.facebook.com/profile.php?id=100090071088897" class="facebook-link">Ir a mi página de Facebook</a>
+
+    <script>
+        function showCourseInfo(course) {
+            // Ocultar todas las secciones de información del curso
+            document.getElementById('course-python').style.display = 'none';
+            document.getElementById('course-java').style.display = 'none';
+            document.getElementById('course-cpp').style.display = 'none';
+
+            // Mostrar la sección correspondiente al curso seleccionado
+            document.getElementById('course-' + course).style.display = 'block';
+        }
+    </script>
 </body>
 </html>
